@@ -125,7 +125,7 @@ endif
 if exists("g:jellybeans_use_lowcolor_black") && g:jellybeans_use_lowcolor_black
   let s:termBlack = "Black"
 else
-  let s:termBlack = "Grey"
+  let s:termBlack = "DarkGrey"
 endif
 
 " When `termguicolors` is set, Vim[^1] ignores `hi Normal guibg=NONE`
@@ -458,7 +458,7 @@ call s:X("PmenuSel","101010","eeeeee","",s:termBlack,"White")
 call s:X("Visual","","404040","","",s:termBlack)
 call s:X("Cursor",s:background_color,"b0d0f0","","","")
 
-call s:X("LineNr","605958",s:background_color,"NONE",s:termBlack,"")
+call s:X("LineNr","605958",s:background_color,"NONE","Gray","")
 call s:X("CursorLineNr","ccc5c4","","NONE","White","")
 call s:X("Comment","888888","","italic","Grey","")
 call s:X("Todo","c7c7c7","","bold","White",s:termBlack)
@@ -468,7 +468,7 @@ call s:X("StatusLineNC","ffffff","403c41","italic","White","Black")
 call s:X("VertSplit","777777","403c41","",s:termBlack,s:termBlack)
 call s:X("WildMenu","f0a0c0","302028","","Magenta","")
 
-call s:X("Folded","a0a8b0","384048","italic",s:termBlack,"")
+call s:X("Folded","a0a8b0","384048","italic","Gray","")
 call s:X("FoldColumn","535D66","1f1f1f","","",s:termBlack)
 call s:X("SignColumn","777777","333333","","",s:termBlack)
 call s:X("ColorColumn","","000000","","",s:termBlack)
@@ -716,6 +716,22 @@ if !empty("s:overrides")
   delf s:current_color
   delf s:current_attr
 endif
+
+" samy patch {{{
+call s:X("SpecialKey","444444","0c0c0c","",s:termBlack,"")
+hi User1 guibg=#cf6a4c guifg=bg ctermbg=Red ctermfg=Black
+hi StatusLine ctermfg=gray ctermbg=none cterm=reverse
+
+hi! clear TabLine
+hi! clear TabLineFill
+hi! clear TabLineSel
+hi! link TabLine StatusLine
+hi! link TabLineFill StatusLine
+hi! link TabLineSel Underlined
+
+hi Pmenu    ctermfg=7 ctermbg=0
+hi PmenuSel ctermfg=0 ctermbg=7
+" }}}
 
 " delete functions {{{
 delf s:X
