@@ -1,3 +1,6 @@
+jellybeans.vim for my custom terminal color.
+
+=-=-[ original README ]=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 jellybeans.vim
 ==============
 
