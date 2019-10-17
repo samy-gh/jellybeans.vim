@@ -729,6 +729,9 @@ hi! link TabLine StatusLine
 hi! link TabLineFill StatusLine
 hi! link TabLineSel Underlined
 
+call s:X("StatusLineTerm","99ad6a","403c41","bold,reverse","2","0")
+call s:X("StatusLineTermNC","403c41","99ad6a","reverse","0","2")
+
 hi Pmenu    ctermfg=7 ctermbg=0
 hi PmenuSel ctermfg=0 ctermbg=7
 " }}}
